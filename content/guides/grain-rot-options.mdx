@@ -1,0 +1,78 @@
+---
+slug: grain-rot-options
+title: "GRAIN ROT Options: Controls, Comfort, and Lobby Settings"
+description: "Use current GRAIN ROT Game, Audio, Video, Accessibility, Controls, and Multiplayer options without relying on unverified graphics tweaks."
+category: Help
+intent: Game settings and best options
+answer: "The full release officially expanded Game, Audio, and Video settings and added gamepad support. For motion comfort, players report Options > Accessibility > Camera Shake set to 0 removes head bob. Update to at least Patch 1.05 before troubleshooting bindings or friends-only lobbies."
+evidence: Official + community
+updated: "2026-08-11"
+readingTime: "7 min"
+image: /images/run.webp
+imageAlt: "First-person GRAIN ROT gameplay used to evaluate visual settings"
+related: [grain-rot-turn-off-flashlight, grain-rot-how-many-players, grain-rot-spark-cannot-move]
+---
+
+## What settings are officially confirmed?
+
+The full-release announcement confirms **expanded Game, Audio, and Video settings** plus **Gamepad Support**. Steam currently lists Full Controller Support, Custom Volume Controls, Stereo Sound, Playable without Timed Input, and Playable at Your Own Pace.
+
+The public patch notes also confirm controls that matter outside the graphics menu:
+
+| Version | Confirmed change |
+| --- | --- |
+| 1.01 | Fixed a light invalidation problem that reduced performance |
+| 1.03 | Fixed custom keybindings not saving correctly |
+| 1.04 | Added lobby privacy, max player count, per-player mic volume, kick, and ban |
+| 1.05 | Fixed friends being unable to join a friends-privacy lobby |
+
+## Reduce head bob and camera motion
+
+Post-release players report this current path:
+
+1. Open **Options**.
+2. Select **Accessibility**.
+3. Set **Camera Shake** to `0`.
+4. Reduce Motion Blur if the current Video menu provides that control and it improves comfort.
+
+The Camera Shake path is a community-observed operation, not a published developer manual. It is useful because it was reported against the full release, but the label should be rechecked after menu updates.
+
+<FieldNote type="warning" title="FOV remains unconfirmed">
+
+Demo-era players requested an FOV slider and invert options. The reviewed 1.0 announcements and patch notes do not confirm that those controls exist, so this guide does not invent a menu path.
+
+</FieldNote>
+
+## Fix keybindings that reset
+
+Update to Patch 1.03 or later, bind the action again, exit the game normally, and restart to test persistence. If it still resets, record the input device, affected action, current game version, and whether the settings directory can be written normally.
+
+Do not begin by making configuration files read-only. That can block other options from saving and hide the actual bug. Avoid copying a stranger's entire config because it can contain resolution, account, or hardware-specific values.
+
+## Configure multiplayer privacy
+
+Patch 1.04 added lobby privacy and a configurable maximum player count. Community UI reports describe Public, Private, and Friends choices; exact wording can change. Hosts can also open View Lobby to adjust each player's microphone volume and use kick or ban.
+
+Use version 1.05 or newer before diagnosing a friends-only join failure. Patch 1.05 specifically corrected that issue.
+
+## Performance troubleshooting
+
+1. Update the game so the Patch 1.01 light invalidation fix is present.
+2. Record the current resolution, frame cap, VSync, shadow, post-processing, anti-aliasing, and any dynamic-resolution choices that actually appear.
+3. Change one setting at a time.
+4. Re-test the same scene and compare both frame rate and frame pacing.
+5. Restore the setting if the result is worse or unchanged.
+
+There is no official best-settings table for every GPU. Community reports disagree about how much some presets change performance. The public sources also do not confirm DLSS, FSR, Frame Generation, or a specific dynamic-resolution implementation.
+
+## Avoid unsafe tweak packs
+
+Do not replace DirectX DLLs, install a mystery “FPS pack,” paste another Unreal game's `Engine.ini`, or promise a fixed percentage gain. These actions are not supported by the official patch notes and can complicate later diagnosis.
+
+## Sources
+
+- [Patch 1.01](https://store.steampowered.com/news/app/4450620/view/703275952293020395) — performance fix.
+- [Patch 1.03](https://store.steampowered.com/news/app/4450620/view/703275952293020479) — keybinding persistence.
+- [Patch 1.04](https://store.steampowered.com/news/app/4450620/view/703275952293021047) — lobby and voice controls.
+- [Patch 1.05](https://store.steampowered.com/news/app/4450620/view/703275952293021063) — friends privacy fix.
+- [Head bob discussion](https://steamcommunity.com/app/4450620/discussions/0/582804662258968988/) — community-observed Camera Shake path.

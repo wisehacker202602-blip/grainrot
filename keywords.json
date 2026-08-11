@@ -1,0 +1,86 @@
+{
+  "totalPages": 24,
+  "ordering": "Categories and pages are ordered by measured 28-day SimilarWeb demand where available, then by player decision flow.",
+  "researchArchive": "docs/keyword-research-master.md",
+  "categories": [
+    {
+      "category": "Platforms",
+      "href": "/platforms/",
+      "pages": [
+        { "keyword": "grain rot price", "href": "/platforms/price/" },
+        { "keyword": "grain rot steam", "href": "/platforms/steam/" },
+        { "keyword": "grain rot console", "href": "/platforms/console/" },
+        { "keyword": "grain rot psn", "href": "/platforms/psn/" },
+        { "keyword": "grain rot freetp", "href": "/platforms/free-to-play/" },
+        { "keyword": "grain rot release date", "href": "/platforms/release-date/" },
+        { "keyword": "grain rot demo", "href": "/platforms/demo/" },
+        { "keyword": "grain rot ps5", "href": "/platforms/ps5/" },
+        { "keyword": "grain rot xbox", "href": "/platforms/xbox/" },
+        { "keyword": "grain rot system requirements", "href": "/platforms/system-requirements/" }
+      ]
+    },
+    {
+      "category": "Game Info",
+      "href": "/game-info/",
+      "pages": [
+        { "keyword": "grain rot how many players", "href": "/game-info/how-many-players/" },
+        { "keyword": "grain rot ai", "href": "/game-info/ai-disclosure/" }
+      ],
+      "hubKeywords": ["grain rot", "grainrot", "grain rot game", "grain rot neem"]
+    },
+    {
+      "category": "Guides",
+      "href": "/guides/",
+      "pages": [
+        { "keyword": "grain rot turn off flashlight", "href": "/guides/turn-off-flashlight/" },
+        { "keyword": "grain rot upgrade the shop", "href": "/guides/upgrade-the-shop/" },
+        { "keyword": "grain rot how to play", "href": "/guides/how-to-play/" }
+      ]
+    },
+    {
+      "category": "Help",
+      "href": "/help/",
+      "pages": [
+        { "keyword": "grain rot spark cannot move", "href": "/help/spark-cannot-move/" },
+        { "keyword": "grain rot demo not working", "href": "/help/demo-not-working/" },
+        { "keyword": "grain rot options", "href": "/help/options/" }
+      ]
+    },
+    {
+      "category": "Enemies",
+      "href": "/enemies/",
+      "pages": [
+        {
+          "keyword": "grain rot enemies",
+          "aliases": ["grain rot monsters"],
+          "href": "/enemies/"
+        }
+      ]
+    },
+    {
+      "category": "Community",
+      "href": "/community/",
+      "pages": [
+        { "keyword": "grain rot discord", "href": "/community/discord/" },
+        { "keyword": "grain rot mods", "href": "/community/mods/" },
+        { "keyword": "grain rot wiki", "href": "/community/wiki-resources/" }
+      ]
+    },
+    {
+      "category": "Español",
+      "href": "/es/",
+      "pages": [
+        {
+          "keyword": "grain rot apagar linterna",
+          "aliases": ["grain rot apagar luz"],
+          "href": "/es/grain-rot-apagar-linterna/"
+        },
+        {
+          "keyword": "grain rot spark no puedo mover",
+          "aliases": ["grain rot no puedo mover"],
+          "href": "/es/grain-rot-no-puedo-mover/"
+        }
+      ]
+    }
+  ]
+}
