@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@/app/globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -6,6 +7,8 @@ import { DocumentLanguage } from "@/components/document-language";
 import { LocalizedSkipLink } from "@/components/localized-skip-link";
 import { getEveryArticle } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+
+const googleAnalyticsId = "G-1X7ES1XVD0";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -49,6 +52,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content">{children}</main>
         <SiteFooter />
       </body>
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleAnalyticsId}');
+            `}
+          </Script>
+        </>
+      )}
     </html>
   );
 }
