@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "GRAIN ROT Wiki, Guides & Platform Status",
+    default: "GRAIN ROT Game Wiki: Steam, Price & Guides",
     template: "%s | GRAIN ROT Wiki",
   },
   description: siteConfig.description,
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: "GRAIN ROT Wiki, Guides & Platform Status",
+    title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
     description: siteConfig.description,
     images: [{ url: "/images/og-cover.webp", width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GRAIN ROT Wiki, Guides & Platform Status",
+    title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
     description: siteConfig.description,
     images: ["/images/og-cover.webp"],
   },

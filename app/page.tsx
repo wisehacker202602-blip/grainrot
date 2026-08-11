@@ -10,7 +10,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { getLocaleIndexAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "GRAIN ROT Wiki, Guides & Platform Status",
+  title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
   description: siteConfig.description,
   path: "/",
   languages: getLocaleIndexAlternates(),
@@ -57,7 +57,7 @@ export default function HomePage() {
         <div className="home-hero__content shell">
           <div className="home-hero__copy">
             <span className="kicker"><span />Independent player reference</span>
-            <h1>GRAIN ROT<br /><em>Wiki & Guides</em></h1>
+            <h1>GRAIN ROT Game<br /><em>Wiki & Guides</em></h1>
             <p>Fast answers for the run you are in now. Platforms, first steps, co-op, settings, enemies, fixes, and community links, with every claim labeled by evidence.</p>
             <div className="home-hero__actions">
               <Link className="button button--primary" href="/guides/how-to-play/"><BookOpen size={18} />Start your first run</Link>

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "GRAIN ROT Wiki",
   shortName: "GRAIN ROT Wiki",
   description:
-    "An independent GRAIN ROT wiki covering platforms, guides, player counts, enemies, fixes, settings, and community resources.",
+    "GRAIN ROT game wiki with verified Steam and price details, Neem publisher information, player count, release status, guides, fixes, enemies, and settings.",
   url: "https://grain-rot.online",
   steamUrl: "https://store.steampowered.com/app/4450620/GRAIN_ROT/",
   discordUrl: "https://discord.gg/xxHrFJTt3J",
