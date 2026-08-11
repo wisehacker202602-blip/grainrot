@@ -1,10 +1,12 @@
 # GRAIN ROT Wiki
 
-An evidence-led GRAIN ROT wiki built from the original 20 researched keyword briefs in `keyword-materials/` and four expanded search-demand pages.
+An evidence-led GRAIN ROT wiki built from the original 20 researched keyword briefs, expanded search-demand pages, and localized versions of two high-intent troubleshooting guides.
 
-The canonical site map is `keywords.json`: 24 search-intent pages grouped into Platforms, Game Info, Guides, Help, Enemies, Community, and Español. Each entry records its canonical URL; navigation and category lists follow measured search demand where available.
+The canonical site map is `keywords.json`: 38 search-intent pages in English, German, French, Latin American Spanish, Brazilian Portuguese, Russian, Japanese, Korean, and Ukrainian. Each entry records its canonical URL; navigation and category lists follow measured search demand where available.
 
 The complete unfiltered research archive is `docs/keyword-research-master.md`. It preserves every autocomplete, Google Trends, SimilarWeb, final-map, and early-draft keyword, including noise and spelling variants; original screenshots and the SimilarWeb workbook are stored in `docs/keyword-sources/`.
+
+The official language basis, locale paths, and translation scope are recorded in `docs/localization.md`.
 
 ## Stack
 
@@ -44,6 +46,6 @@ Every article lives in `content/guides/*.mdx` and includes frontmatter for:
 
 The evidence levels are `Official`, `Official + community`, and `Community observed`.
 
-## Before production deployment
+## Production deployment
 
-Update `siteConfig.url` in `lib/site.ts` to the final domain and provision the editorial email shown on the contact page.
+The canonical origin is `https://grain-rot.online`. Deploy the generated `out/` directory and configure the host to serve `out/404.html` for unknown routes. Editorial corrections use the repository's GitHub Issues page.

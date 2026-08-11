@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Monitor, ShoppingCart } from "lucide-react";
 import { CategoryHub } from "@/components/category-hub";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "GRAIN ROT Platforms, Price & Release",
   description: "GRAIN ROT price, Steam release, Demo, PC requirements, PS5, PSN, Xbox, Game Pass, and console status.",
-};
+  path: "/platforms/",
+});
 
 export default function PlatformsPage() {
   return (

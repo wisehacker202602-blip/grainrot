@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { DocumentLanguage } from "@/components/document-language";
+import { LocalizedSkipLink } from "@/components/localized-skip-link";
 import { getEveryArticle } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
@@ -39,9 +41,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const articles = getEveryArticle().map(({ content, toc, ...meta }) => meta);
 
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
+        <DocumentLanguage />
+        <LocalizedSkipLink />
         <SiteHeader articles={articles} />
         <main id="main-content">{children}</main>
         <SiteFooter />

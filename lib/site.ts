@@ -3,9 +3,10 @@ export const siteConfig = {
   shortName: "GRAIN ROT Wiki",
   description:
     "An independent GRAIN ROT wiki covering platforms, guides, player counts, enemies, fixes, settings, and community resources.",
-  url: "https://grainrot.example.com",
+  url: "https://grain-rot.online",
   steamUrl: "https://store.steampowered.com/app/4450620/GRAIN_ROT/",
   discordUrl: "https://discord.gg/xxHrFJTt3J",
+  feedbackUrl: "https://github.com/wisehacker202602-blip/grainrot/issues/new",
   updated: "August 11, 2026",
   updatedIso: "2026-08-11",
 };
@@ -39,17 +40,19 @@ export const categoryHrefs: Record<Category, string> = {
   Community: "/community/",
 };
 
-const spanishCategoryLabels: Record<Category, string> = {
-  Platforms: "Plataformas",
-  "Game Info": "Información del juego",
-  Guides: "Guías",
-  Help: "Ayuda",
-  Enemies: "Enemigos",
-  Community: "Comunidad",
+const localizedCategoryLabels: Partial<Record<import("@/lib/i18n").ArticleLocale, Record<Category, string>>> = {
+  de: { Platforms: "Plattformen", "Game Info": "Spielinfo", Guides: "Guides", Help: "Hilfe", Enemies: "Gegner", Community: "Community" },
+  fr: { Platforms: "Plateformes", "Game Info": "Infos du jeu", Guides: "Guides", Help: "Aide", Enemies: "Ennemis", Community: "Communauté" },
+  es: { Platforms: "Plataformas", "Game Info": "Información del juego", Guides: "Guías", Help: "Ayuda", Enemies: "Enemigos", Community: "Comunidad" },
+  "pt-br": { Platforms: "Plataformas", "Game Info": "Informações do jogo", Guides: "Guias", Help: "Ajuda", Enemies: "Inimigos", Community: "Comunidade" },
+  ru: { Platforms: "Платформы", "Game Info": "Об игре", Guides: "Гайды", Help: "Помощь", Enemies: "Враги", Community: "Сообщество" },
+  ja: { Platforms: "プラットフォーム", "Game Info": "ゲーム情報", Guides: "ガイド", Help: "トラブル対処", Enemies: "敵", Community: "コミュニティ" },
+  ko: { Platforms: "플랫폼", "Game Info": "게임 정보", Guides: "공략", Help: "문제 해결", Enemies: "적", Community: "커뮤니티" },
+  uk: { Platforms: "Платформи", "Game Info": "Про гру", Guides: "Гайди", Help: "Допомога", Enemies: "Вороги", Community: "Спільнота" },
 };
 
-export function getCategoryLabel(category: Category, locale: "en" | "es" = "en") {
-  return locale === "es" ? spanishCategoryLabels[category] : category;
+export function getCategoryLabel(category: Category, locale: import("@/lib/i18n").ArticleLocale = "en") {
+  return localizedCategoryLabels[locale]?.[category] ?? category;
 }
 
 export const articlePaths: Record<string, string> = {
@@ -77,6 +80,20 @@ export const articlePaths: Record<string, string> = {
   "grain-rot-wiki": "/community/wiki-resources/",
   "grain-rot-no-puedo-mover": "/es/grain-rot-no-puedo-mover/",
   "grain-rot-apagar-linterna": "/es/grain-rot-apagar-linterna/",
+  "de-turn-off-flashlight": "/de/taschenlampe-ausschalten/",
+  "de-spark-cannot-move": "/de/spark-kann-sich-nicht-bewegen/",
+  "fr-turn-off-flashlight": "/fr/eteindre-la-lampe-torche/",
+  "fr-spark-cannot-move": "/fr/spark-ne-bouge-plus/",
+  "pt-br-turn-off-flashlight": "/pt-br/desligar-lanterna/",
+  "pt-br-spark-cannot-move": "/pt-br/spark-nao-se-move/",
+  "ru-turn-off-flashlight": "/ru/vyklyuchit-fonar/",
+  "ru-spark-cannot-move": "/ru/spark-ne-dvigaetsya/",
+  "ja-turn-off-flashlight": "/ja/flashlight-off/",
+  "ja-spark-cannot-move": "/ja/spark-cannot-move/",
+  "ko-turn-off-flashlight": "/ko/flashlight-off/",
+  "ko-spark-cannot-move": "/ko/spark-cannot-move/",
+  "uk-turn-off-flashlight": "/uk/vymknuty-likhtar/",
+  "uk-spark-cannot-move": "/uk/spark-ne-rukhayetsya/",
 };
 
 export const articleOrder = [

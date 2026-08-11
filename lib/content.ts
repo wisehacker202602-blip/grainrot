@@ -2,11 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { articleOrder, getArticleHref, type Category } from "@/lib/site";
+import type { ArticleLocale } from "@/lib/i18n";
+
+export type { ArticleLocale } from "@/lib/i18n";
 
 const contentDirectory = path.join(process.cwd(), "content", "guides");
 
 export type EvidenceLevel = "Official" | "Official + community" | "Community observed";
-export type ArticleLocale = "en" | "es";
 
 export type ArticleMeta = {
   slug: string;
@@ -22,6 +24,7 @@ export type ArticleMeta = {
   image: string;
   imageAlt: string;
   locale: ArticleLocale;
+  translationKey?: "flashlight" | "spark-movement";
   featured?: boolean;
   related?: string[];
 };
@@ -40,9 +43,9 @@ export type Article = ArticleMeta & {
 export function slugifyHeading(value: string) {
   return value
     .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9\s-]/g, "")
+    .normalize("NFKD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
     .trim()
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
@@ -94,7 +97,15 @@ export function getEveryArticle(): Article[] {
 }
 
 export function getAllArticles(locale: ArticleLocale = "en"): Article[] {
-  return getEveryArticle().filter((article) => article.locale === locale);
+  const localizedOrder = ["flashlight", "spark-movement"];
+  return getEveryArticle()
+    .filter((article) => article.locale === locale)
+    .sort((a, b) => {
+      if (locale === "en") return 0;
+      const aIndex = localizedOrder.indexOf(a.translationKey ?? "");
+      const bIndex = localizedOrder.indexOf(b.translationKey ?? "");
+      return (aIndex === -1 ? localizedOrder.length : aIndex) - (bIndex === -1 ? localizedOrder.length : bIndex);
+    });
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {

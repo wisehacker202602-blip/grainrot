@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Eye, ShieldCheck } from "lucide-react";
 import { getAllArticles } from "@/lib/content";
+import { createPageMetadata } from "@/lib/metadata";
 import { categories, categoryDescriptions } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "GRAIN ROT Wiki Index",
   description: "Browse every GRAIN ROT wiki page by platform, game information, guide, fix, enemy, and community category.",
-};
+  path: "/wiki/",
+});
 
 export default function WikiPage() {
   const articles = getAllArticles();

@@ -21,7 +21,7 @@ export function ArticleCard({ article, compact = false }: { article: ArticleMeta
         <h3>{article.title}</h3>
         <p>{article.description}</p>
         <div className="article-card__footer">
-          <EvidenceBadge level={article.evidence} />
+          <EvidenceBadge level={article.evidence} locale={article.locale} />
           <ArrowUpRight aria-hidden="true" size={18} />
         </div>
       </div>

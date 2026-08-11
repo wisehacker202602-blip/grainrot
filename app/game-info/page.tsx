@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, Users } from "lucide-react";
 import { CategoryHub } from "@/components/category-hub";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "GRAIN ROT Game, Developer & Neem Publisher",
   description: "What GRAIN ROT is, who developed it, Neem Interactive's publisher role, player count, and AI disclosure.",
-};
+  path: "/game-info/",
+});
 
 export default function GameInfoPage() {
   return (

@@ -1,5 +1,8 @@
 {
-  "totalPages": 24,
+  "totalPages": 38,
+  "languageHubs": 8,
+  "supportedLocales": ["en", "de", "fr", "es", "pt-BR", "ru", "ja", "ko", "uk"],
+  "languageBasis": "Published locales are selected from Steam's official supported_languages field for app 4450620, checked 2026-08-11. Chinese locales are intentionally excluded. Website translation coverage does not claim game-language support beyond that source.",
   "ordering": "Categories and pages are ordered by measured 28-day SimilarWeb demand where available, then by player decision flow.",
   "researchArchive": "docs/keyword-research-master.md",
   "categories": [
@@ -80,6 +83,62 @@
           "aliases": ["grain rot no puedo mover"],
           "href": "/es/grain-rot-no-puedo-mover/"
         }
+      ]
+    },
+    {
+      "category": "Deutsch",
+      "href": "/de/",
+      "pages": [
+        { "keyword": "grain rot taschenlampe ausschalten", "href": "/de/taschenlampe-ausschalten/" },
+        { "keyword": "grain rot spark kann sich nicht bewegen", "href": "/de/spark-kann-sich-nicht-bewegen/" }
+      ]
+    },
+    {
+      "category": "Français",
+      "href": "/fr/",
+      "pages": [
+        { "keyword": "grain rot éteindre lampe torche", "href": "/fr/eteindre-la-lampe-torche/" },
+        { "keyword": "grain rot spark ne bouge plus", "href": "/fr/spark-ne-bouge-plus/" }
+      ]
+    },
+    {
+      "category": "Português (Brasil)",
+      "href": "/pt-br/",
+      "pages": [
+        { "keyword": "grain rot desligar lanterna", "href": "/pt-br/desligar-lanterna/" },
+        { "keyword": "grain rot spark não se move", "href": "/pt-br/spark-nao-se-move/" }
+      ]
+    },
+    {
+      "category": "Русский",
+      "href": "/ru/",
+      "pages": [
+        { "keyword": "grain rot выключить фонарь", "href": "/ru/vyklyuchit-fonar/" },
+        { "keyword": "grain rot spark не двигается", "href": "/ru/spark-ne-dvigaetsya/" }
+      ]
+    },
+    {
+      "category": "日本語",
+      "href": "/ja/",
+      "pages": [
+        { "keyword": "grain rot 懐中電灯 消す", "href": "/ja/flashlight-off/" },
+        { "keyword": "grain rot spark 動けない", "href": "/ja/spark-cannot-move/" }
+      ]
+    },
+    {
+      "category": "한국어",
+      "href": "/ko/",
+      "pages": [
+        { "keyword": "grain rot 손전등 끄기", "href": "/ko/flashlight-off/" },
+        { "keyword": "grain rot spark 움직이지 않음", "href": "/ko/spark-cannot-move/" }
+      ]
+    },
+    {
+      "category": "Українська",
+      "href": "/uk/",
+      "pages": [
+        { "keyword": "grain rot вимкнути ліхтар", "href": "/uk/vymknuty-likhtar/" },
+        { "keyword": "grain rot spark не рухається", "href": "/uk/spark-ne-rukhayetsya/" }
       ]
     }
   ]

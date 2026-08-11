@@ -1,10 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowRight, BadgeCheck, BookOpen, Bug, ExternalLink, Gamepad2, Layers3, Search, Settings2, ShieldAlert, Users } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { EvidenceBadge } from "@/components/evidence-badge";
 import { getAllArticles } from "@/lib/content";
 import { categories, categoryDescriptions, siteConfig } from "@/lib/site";
+import { createPageMetadata } from "@/lib/metadata";
+import { getLocaleIndexAlternates } from "@/lib/i18n";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "GRAIN ROT Wiki, Guides & Platform Status",
+  description: siteConfig.description,
+  path: "/",
+  languages: getLocaleIndexAlternates(),
+  absoluteTitle: true,
+});
 
 const coreLoop = [
   { number: "01", title: "Descend", copy: "Read the Elevator state, enter a shifting Deep Layer, and keep a return plan.", icon: Layers3 },
