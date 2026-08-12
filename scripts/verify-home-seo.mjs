@@ -137,9 +137,22 @@ const rootFaviconAssets = [
   "apple-touch-icon.png",
   "site.webmanifest",
 ];
+const legacyFaviconAssets = [
+  "favicon/favicon.ico",
+  "favicon/favicon-16x16.png",
+  "favicon/favicon-32x32.png",
+  "favicon/favicon-48x48.png",
+  "favicon/favicon-96x96.png",
+  "favicon/favicon-192x192.png",
+  "favicon/favicon-512x512.png",
+  "favicon/android-chrome-192x192.png",
+  "favicon/android-chrome-512x512.png",
+  "favicon/apple-touch-icon.png",
+  "favicon/site.webmanifest",
+];
 
-for (const asset of rootFaviconAssets) {
-  assert.ok(existsSync(join("out", asset)), `${asset}: exported at site root`);
+for (const asset of [...rootFaviconAssets, ...legacyFaviconAssets]) {
+  assert.ok(existsSync(join("out", asset)), `${asset}: exported favicon asset`);
 }
 
 assert.match(rootHtml, /<link rel="manifest" href="\/site\.webmanifest"\/>/, "index.html: root manifest");
