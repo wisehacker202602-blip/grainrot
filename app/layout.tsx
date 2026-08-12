@@ -18,12 +18,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon/favicon.ico" },
-      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
     ],
-    apple: "/favicon/apple-touch-icon.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",

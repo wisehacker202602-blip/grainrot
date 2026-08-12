@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const pages = [
@@ -128,5 +128,41 @@ for (const page of pages) {
 
 const rootHtml = readFileSync(join("out", "index.html"), "utf8");
 assert.match(rootHtml, /"alternateName":\["GRAINROT","Grain Rot Wiki"\]/, "index.html: WebSite aliases");
+
+const rootFaviconAssets = [
+  "favicon.ico",
+  "favicon-48x48.png",
+  "icon-192.png",
+  "icon-512.png",
+  "apple-touch-icon.png",
+  "site.webmanifest",
+];
+
+for (const asset of rootFaviconAssets) {
+  assert.ok(existsSync(join("out", asset)), `${asset}: exported at site root`);
+}
+
+assert.match(rootHtml, /<link rel="manifest" href="\/site\.webmanifest"\/>/, "index.html: root manifest");
+assert.match(rootHtml, /<link rel="icon" href="\/favicon\.ico"\/>/, "index.html: root ico favicon");
+assert.match(
+  rootHtml,
+  /<link rel="icon" href="\/favicon-48x48\.png" sizes="48x48" type="image\/png"\/>/,
+  "index.html: root 48px favicon",
+);
+assert.match(
+  rootHtml,
+  /<link rel="apple-touch-icon" href="\/apple-touch-icon\.png"\/>/,
+  "index.html: root Apple touch icon",
+);
+
+const manifest = JSON.parse(readFileSync(join("out", "site.webmanifest"), "utf8"));
+assert.deepEqual(
+  manifest.icons.map(({ src, sizes, type }) => ({ src, sizes, type })),
+  [
+    { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    { src: "/icon-512.png", sizes: "512x512", type: "image/png" },
+  ],
+  "site.webmanifest: root icon URLs",
+);
 
 console.log(`Verified localized home SEO for ${pages.length} pages.`);
