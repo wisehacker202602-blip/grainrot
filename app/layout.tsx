@@ -13,7 +13,7 @@ const googleAnalyticsId = "G-1X7ES1XVD0";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "GRAIN ROT Game Wiki: Steam, Price & Guides",
+    default: "GRAIN ROT Wiki: Game Guides, Co-op, Enemies & Fixes",
     template: "%s | GRAIN ROT Wiki",
   },
   description: siteConfig.description,
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
+    title: "GRAIN ROT Wiki: Game Guides, Co-op, Enemies & Fixes",
     description: siteConfig.description,
     images: [{ url: "/images/og-cover.webp", width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
+    title: "GRAIN ROT Wiki: Game Guides, Co-op, Enemies & Fixes",
     description: siteConfig.description,
     images: ["/images/og-cover.webp"],
   },

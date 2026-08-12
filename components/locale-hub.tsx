@@ -13,6 +13,7 @@ export function createLocaleHubMetadata(locale: Exclude<ArticleLocale, "en">): M
     path: config.href,
     locale: config.ogLocale,
     languages: getLocaleIndexAlternates(),
+    absoluteTitle: true,
   });
 }
 

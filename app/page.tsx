@@ -10,7 +10,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { getLocaleIndexAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "GRAIN ROT Game Wiki: Steam, Price & Guides",
+  title: "GRAIN ROT Wiki: Game Guides, Co-op, Enemies & Fixes",
   description: siteConfig.description,
   path: "/",
   languages: getLocaleIndexAlternates(),
@@ -39,6 +39,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
+    alternateName: ["GRAINROT", "Grain Rot Wiki"],
     url: siteConfig.url,
     description: siteConfig.description,
     potentialAction: {
@@ -56,11 +57,11 @@ export default function HomePage() {
         <div className="home-hero__shade" />
         <div className="home-hero__content shell">
           <div className="home-hero__copy">
-            <span className="kicker"><span />Independent player reference</span>
-            <h1>GRAIN ROT Game<br /><em>Wiki & Guides</em></h1>
-            <p>Fast answers for the run you are in now. Platforms, first steps, co-op, settings, enemies, fixes, and community links, with every claim labeled by evidence.</p>
+            <span className="kicker"><span />Independent, evidence-led player reference</span>
+            <h1>GRAIN ROT<br /><em>Wiki</em></h1>
+            <p>A complete player guide to the core loop, co-op, progression, enemies, settings, platforms, and common problems, with every answer clearly sourced.</p>
             <div className="home-hero__actions">
-              <Link className="button button--primary" href="/guides/how-to-play/"><BookOpen size={18} />Start your first run</Link>
+              <Link className="button button--primary" href="/guides/how-to-play/"><BookOpen size={18} />Learn how to play</Link>
               <Link className="button button--ghost" href="/wiki/"><Search size={18} />Browse the wiki</Link>
             </div>
             <div className="home-hero__trust">
