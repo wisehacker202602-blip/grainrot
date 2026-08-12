@@ -1,6 +1,7 @@
 .next/
 out/
 node_modules/
+.worktrees/
 .DS_Store
 *.log
 *.tsbuildinfo
