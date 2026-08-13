@@ -3,21 +3,23 @@ slug: ja-turn-off-flashlight
 locale: ja
 translationKey: flashlight
 title: "GRAIN ROTで懐中電灯を消す方法"
-description: "GRAIN ROTではRキーで懐中電灯を消せます。反応しない場合は、操作設定のFlashlightアクションを確認してください。"
+description: "GRAIN ROTの懐中電灯は、キーボードではRキーで消灯・点灯できます。反応しない場合は、操作設定で現在のFlashlightキーを確認してください。"
 category: Guides
 intent: 懐中電灯を消す
-answer: "キーボードのRキーを押すと懐中電灯が消え、もう一度Rキーを押すと点灯します。反応しない場合はOptionsからControls / Key Bindingsを開き、Flashlightに割り当てられたキーを確認してください。"
+answer: "キーボードではRキーを押すたびに懐中電灯の消灯と点灯を切り替えられます。Rキーが反応しない場合は、ControlsまたはKey Bindingsを開き、Flashlightに現在割り当てられているキーを確認してください。"
 evidence: Official + community
 updated: "2026-08-11"
-readingTime: "3分"
+readingTime: "4分"
 image: /images/enemies.webp
 imageAlt: "プレイヤーの装備で照らされたGRAIN ROTの暗い通路"
 related: [ja-spark-cannot-move]
 ---
 
-## 懐中電灯のキー
+## 懐中電灯のキー操作
 
-ゲームプレイ映像で確認できる初期キーは **R** です。1回押すと懐中電灯が消え、もう一度押すと点灯します。GRAIN ROTの公式ショート動画でもRキーが言及されており、この割り当てを裏付けています。
+複数のゲームプレイ映像で確認できるキーボードの初期キーは **R** です。1回押すと懐中電灯が消え、もう一度押すと点灯します。
+
+GRAIN ROT公式TikTokにも「do NOT press r to turn on your flashlight」というタイトルの動画があり、Rキーの割り当てを別の公式情報からも確認できます。ただし、この文言は動画内の状況に合わせたジョークであり、懐中電灯を常に使わないよう指示するものではありません。
 
 ## Rキーが反応しない場合
 
@@ -25,16 +27,29 @@ related: [ja-spark-cannot-move]
 2. **Controls / Key Bindings**に進みます。
 3. **Flashlight**アクションを探します。
 4. キーが変更されていないか、別の操作と競合していないか確認します。
-5. 設定を適用し、ゲームを再起動してもう一度試します。
+5. キーを割り当て直して設定を適用し、通常どおりゲームを終了します。
+6. ゲームを再起動し、割り当てが保存されているか確認します。
 
-パッチ1.03では、カスタムキー設定が保存されない問題の修正が案内されています。設定ファイルを直接変更する前にゲームを更新してください。
+パッチ1.03では、カスタムキー割り当てが正しく保存されない問題の修正が案内されています。ただし、同日には一部のプレイヤーから設定が再び初期化されたとの報告もありました。設定ファイルを直接変更する前に、まずゲームを最新版へ更新して再確認してください。
 
-## 光は敵を引き寄せる？
+<FieldNote type="warning" title="未検証WikiのFキー表記に注意">
 
-公式情報では、Corruptedが音、動き、ほかのCorruptedに反応すると説明されています。一方で、すべての敵が懐中電灯を必ず検知するという共通ルールは公開されていません。一度の遭遇で見た挙動を全モンスター共通の仕様とは判断できません。
+一部のファンサイトには **F** と記載されていますが、これは公式ショート動画のタイトルや複数のゲームプレイ映像と一致しません。手元の環境でRとFの情報が食い違う場合は、現在のゲーム内設定に表示される割り当てを優先してください。
+
+</FieldNote>
+
+## 懐中電灯の光は敵を引き寄せる？
+
+公式情報では、Corruptedは**音、動き、ほかのCorrupted**に反応すると説明されています。一方、すべての敵が懐中電灯を検知するという共通ルールは公開されていません。明かりを消せば即座に敵の注意が外れる、またはすべてのCorruptedが光に同じ反応を示すとは断定できません。
+
+視界の確保と、その場で実際に確認できる敵の挙動を基準に懐中電灯を使ってください。特定の敵への対処法は、対象バージョンと根拠が確認できた場合にのみ確定情報として扱うべきです。
+
+## コントローラーの割り当て
+
+Steamではフルコントローラーサポートが案内されていますが、今回確認した公開情報からは、懐中電灯の信頼できる初期ボタンを特定できませんでした。一般的なフェイスボタンの情報を流用せず、現在の**Controls**メニューでコントローラーの割り当てを確認してください。
 
 ## 情報源
 
-- [GRAIN ROT公式TikTok動画](https://www.tiktok.com/@grainrotofficial/video/7656093412139044110)
-- [SteamのGRAIN ROT公式ページ](https://store.steampowered.com/app/4450620/GRAIN_ROT/)
-- [パッチ1.03](https://store.steampowered.com/news/app/4450620/view/703275952293020479)
+- [GRAIN ROT公式TikTokの懐中電灯動画](https://www.tiktok.com/@grainrotofficial/video/7656093412139044110)
+- [SteamのGRAIN ROT公式ページ](https://store.steampowered.com/app/4450620/GRAIN_ROT/) — Corruptedの反応について公式に確認できる範囲
+- [パッチ1.03](https://store.steampowered.com/news/app/4450620/view/703275952293020479) — カスタムキー割り当ての保存に関する修正

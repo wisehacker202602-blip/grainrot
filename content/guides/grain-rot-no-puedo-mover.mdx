@@ -2,39 +2,57 @@
 slug: grain-rot-no-puedo-mover
 locale: es
 translationKey: spark-movement
-title: "GRAIN ROT: No Puedo Mover el Spark"
-description: "Qué hacer si no puedes mover el Spark en GRAIN ROT: revisa el Glow, busca luz o un compañero y separa la mecánica normal de un posible error."
+title: "GRAIN ROT: el Spark no se mueve, ¿es por el Glow o es un error?"
+description: "Si no puedes mover el Spark en GRAIN ROT, revisa el Glow y busca una fuente de luz o un compañero. Si todos los controles dejan de responder, podría tratarse de un error."
 category: Help
-intent: Spark no se puede mover
-answer: "Revisa primero el Glow del Spark. Las observaciones de la comunidad indican que, cuando el Glow se agota, el Spark pierde movilidad progresivamente. Acércate a una luz o a un compañero si todavía puedes moverte; si tienes Glow y todos los controles dejaron de responder de golpe, puede ser un error."
+intent: El Spark no se puede mover
+answer: "Revisa primero el Glow del Spark. Según observaciones de la comunidad, cuando el Glow se agota, el Spark puede perder progresivamente la capacidad de saltar o flotar; permanecer cerca de una fuente de luz o de un compañero puede ayudar a recuperarla. Si todavía tienes Glow pero ningún control de movimiento responde, registra los detalles de la sesión e informa de un posible error."
 evidence: Official + community
 updated: "2026-08-11"
-readingTime: "4 min"
+readingTime: "5 min"
 image: /images/enemies.webp
 imageAlt: "Un Spark brillante cerca de varios Vessels de GRAIN ROT"
 related: [grain-rot-apagar-linterna]
 ---
 
-## Revisa el Glow antes de asumir que es un bug
+## Revisa el Glow antes de asumir que es un error
 
-La página oficial explica que un Spark debe encontrar otro cuerpo antes de que su luz desaparezca. Los jugadores también han observado que la movilidad puede reducirse mientras se agota el **Glow**.
+La página oficial de la tienda explica que un Spark debe encontrar otro cuerpo que ocupar antes de que su luz desaparezca por completo. En conversaciones posteriores al lanzamiento, algunos jugadores aportaron otra observación útil: a medida que se agota el **Glow**, el Spark puede perder progresivamente la capacidad de saltar o flotar. Permanecer cerca de una fuente de luz o de un compañero puede ayudarle a recuperar la movilidad.
 
-Si el movimiento se volvió más lento de forma gradual, probablemente estás viendo la presión normal de recuperación. Si todo dejó de responder de forma instantánea, puede ser un problema de controles o de la sesión.
+Por eso, el Glow es el primer indicador que debes revisar. Si el Spark pierde movilidad gradualmente mientras desaparece el Glow, puede tratarse de la mecánica de recuperación prevista y no de un bloqueo de los controles.
 
 ## Pasos para recuperar el movimiento
 
-1. Mira el estado del **Glow**.
-2. Acércate a un compañero o a una fuente de luz si todavía puedes moverte.
-3. Pide al equipo que regrese en lugar de seguir bajando.
-4. Busca un nuevo Vessel que el Spark pueda ocupar.
-5. Si tienes Glow y ningún control responde, abre las opciones y revisa las teclas asignadas.
+1. **Revisa el estado del Glow.** Fíjate si el movimiento se debilitó de forma gradual o se detuvo de golpe.
+2. **Acércate a un compañero o a una fuente de luz cercana** si todavía puedes moverte.
+3. **Mantén al equipo cerca.** Pide a un jugador que controle un Vessel que regrese en lugar de seguir avanzando.
+4. **Busca un nuevo Vessel.** El estado Spark es temporal; el objetivo es encontrar otro cuerpo que puedas ocupar.
+5. **Distingue la mecánica de un problema con los controles.** Si el Glow sigue visible pero ningún control responde, registra las condiciones exactas.
 
-## Cuándo reportarlo como error
+<FieldNote type="info" title="Datos útiles para informar del problema">
 
-Guarda la versión del juego, el tipo de partida, la acción anterior al bloqueo y si el host podía verte. Reinicia la sesión una vez y, si vuelve a ocurrir, informa el caso en el Discord oficial.
+Incluye la versión del juego, si la partida era individual o multijugador, quién era el anfitrión de la sala, el dispositivo de entrada, el nivel de Glow, la habitación o capa, qué destruyó al Vessel y si volver a conectarte cambió el estado.
 
-La [guía inglesa de Spark Cannot Move](/help/spark-cannot-move/) mantiene el análisis completo y las fuentes originales.
+</FieldNote>
 
-## Respuesta corta
+## Cuándo parece un problema técnico
 
-`No puedo mover` no siempre significa que el juego se bloqueó. Glow bajo puede limitar la movilidad; Glow visible con pérdida total e instantánea de controles apunta más a un error.
+Trátalo como un posible error si el movimiento se detiene de golpe aunque todavía haya Glow, el menú **Controls** sigue mostrando asignaciones válidas y acercarte a una fuente de luz o a un compañero no produce ningún efecto.
+
+Los parches 1.01 a 1.05 no mencionan de forma explícita una corrección para el movimiento del Spark. Por lo tanto, no existe una tecla oficial que garantice resolverlo ni una solución confirmada basada en volver a conectarse. Podría tratarse de una desincronización multijugador, un bloqueo de entrada, un problema de colisiones u otra causa, pero ninguna de estas posibilidades debe presentarse como confirmada sin un caso reproducible.
+
+## Comprobaciones técnicas de bajo riesgo
+
+- Actualiza el juego a la versión más reciente de Steam.
+- Comprueba las asignaciones de movimiento y el dispositivo de entrada activo.
+- Retira los mods inyectados, programas de trucos (trainers) o archivos DLL personalizados antes de intentar reproducir el problema.
+- Si el equipo puede hacerlo sin arriesgar la partida, vuelve a un estado estable e intenta reproducirlo una vez.
+- Informa del resultado en el servidor oficial de Discord o mediante el canal de soporte correspondiente.
+
+No hay garantías de que volver a conectarte conserve el progreso de la partida. Tampoco te fíes de los porcentajes de éxito sin fuentes que publican algunos sitios de solución de problemas.
+
+## Fuentes
+
+- [GRAIN ROT en Steam](https://store.steampowered.com/app/4450620/GRAIN_ROT/) — descripción oficial del Spark y de la desaparición gradual de su luz.
+- [Discusión en Steam posterior al lanzamiento](https://steamcommunity.com/app/4450620/discussions/0/582805206889151919/) — observaciones de la comunidad sobre el Glow y la movilidad.
+- [Historial oficial de parches](https://store.steampowered.com/news/app/4450620) — no incluye una corrección explícita del movimiento del Spark hasta el parche 1.05.

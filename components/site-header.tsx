@@ -68,6 +68,11 @@ export function SiteHeader({ articles }: { articles: ArticleMeta[] }) {
     return articles.find((article) => article.locale === locale && article.translationKey === sourceArticle.translationKey)?.href ?? href;
   };
   const isActive = (href: string) => {
+    if (locale !== "en") {
+      if (href === "/") return normalizedPath === config.href;
+      if (href === "/guides/") return currentArticle?.category === "Guides";
+      if (href === "/help/") return currentArticle?.category === "Help";
+    }
     const target = localizedHref(href);
     return target === "/" ? pathname === "/" : pathname.startsWith(target);
   };

@@ -2,41 +2,57 @@
 slug: fr-spark-cannot-move
 locale: fr
 translationKey: spark-movement
-title: "GRAIN ROT : le Spark ne Bouge Plus"
-description: "Si votre Spark ne bouge plus dans GRAIN ROT, vérifiez d’abord le Glow, une source de lumière ou un allié, puis recherchez un problème de commandes."
+title: "GRAIN ROT : Spark immobile, manque de Glow ou bug ?"
+description: "Si votre Spark ne peut plus bouger dans GRAIN ROT, vérifiez d’abord son Glow ainsi que les lumières et coéquipiers proches, puis envisagez un bug si aucune commande ne répond."
 category: Help
 intent: Spark ne bouge plus
-answer: "Vérifiez d’abord le Glow du Spark. D’après les observations de la communauté, un Glow qui diminue peut limiter progressivement les sauts ou le flottement. Rapprochez-vous d’une lumière ou d’un allié tant que vous pouvez encore bouger. Si le Glow est visible et que toutes les commandes cessent soudainement de répondre, notez les circonstances comme un possible bug."
+answer: "Vérifiez d’abord le Glow de votre Spark. Selon les observations de joueurs, la diminution du Glow peut progressivement limiter les sauts ou le flottement, tandis qu’une lumière ou un coéquipier proche peut aider à le restaurer. Si le Glow est encore présent mais qu’aucune commande de déplacement ne répond, relevez les détails de la partie et signalez un possible bug."
 evidence: Official + community
 updated: "2026-08-11"
-readingTime: "4 min"
+readingTime: "5 min"
 image: /images/enemies.webp
-imageAlt: "Un Spark lumineux près de Vessels dans GRAIN ROT"
+imageAlt: "Un Spark lumineux près de plusieurs Vessels dans GRAIN ROT"
 related: [fr-turn-off-flashlight]
 ---
 
-## Vérifier le Glow en premier
+## Vérifier le Glow avant de conclure à un bug
 
-La page officielle indique qu’un Spark doit trouver un nouvel hôte avant que sa lumière ne disparaisse. Des joueurs ont aussi observé que la baisse du **Glow** peut réduire progressivement la capacité à sauter ou à flotter.
+La page officielle du jeu explique qu’un Spark doit trouver un nouvel hôte avant que sa lumière ne disparaisse complètement. Les discussions de joueurs après la sortie ajoutent une observation utile : lorsque le **Glow** diminue, le Spark peut progressivement perdre sa capacité à sauter ou à flotter. Une lumière ou un coéquipier proche peut aider à rétablir cet état.
 
-Si la mobilité diminue en même temps que le Glow, il peut s’agir de la pression de récupération prévue par le jeu et non d’une commande bloquée.
+Le Glow est donc le premier indicateur à examiner. Si le Spark perd peu à peu sa mobilité en même temps que sa lumière, il peut s’agir d’une mécanique normale qui pousse le joueur à trouver un moyen de récupérer, et non d’un blocage des commandes.
 
 ## Étapes de récupération
 
-1. Observez le **Glow** et la manière dont la perte de mobilité a commencé.
-2. Dirigez-vous vers une lumière ou un coéquipier si vous pouvez encore bouger.
-3. Demandez à l’équipe de revenir au lieu de continuer plus bas.
-4. Cherchez un nouvel hôte pour le Spark.
-5. Vérifiez les commandes si le Glow est présent mais qu’aucune entrée ne répond.
+1. **Observez l’état du Glow.** Notez si la mobilité a diminué progressivement ou si elle s’est interrompue d’un seul coup.
+2. **Rapprochez-vous d’un coéquipier ou d’une source de lumière** s’il vous reste encore un peu de mobilité.
+3. **Demandez au groupe de rester à proximité.** Un joueur contrôlant un Vessel devrait revenir vers vous plutôt que de poursuivre sa descente.
+4. **Cherchez un nouvel hôte.** L’état de Spark est temporaire et votre objectif est de retrouver un Vessel.
+5. **Distinguez la mécanique du problème de commandes.** Si le Glow est visible mais qu’aucune entrée ne répond, relevez les circonstances exactes.
+
+<FieldNote type="info" title="Informations utiles pour un signalement">
+
+Indiquez la version du jeu, le mode solo ou multijoueur, le joueur qui héberge la partie, le périphérique utilisé, le niveau actuel du Glow, la salle ou la couche concernée, ce qui a détruit le Vessel et si une reconnexion a modifié la situation.
+
+</FieldNote>
 
 ## Quand suspecter un problème technique
 
-Un bug est plus plausible si le mouvement s’arrête brutalement alors que le Glow reste visible, que les touches sont correctement attribuées et qu’une source de récupération proche ne change rien. Les notes de mise à jour officielles jusqu’à la version 1.05 ne donnent pas de solution générale confirmée.
+Un bug devient plus plausible si le mouvement s’interrompt brutalement alors que le Glow est toujours visible, que les commandes affichées dans le menu **Controls** sont correctes et que vous rapprocher d’une lumière ou d’un allié ne produit aucun effet.
 
-Notez la version du jeu, le mode solo ou multijoueur, l’hôte, le périphérique utilisé, le Glow et l’action précédant le blocage avant de signaler le cas sur le Discord officiel.
+Les patchs 1.01 à 1.05 ne mentionnent explicitement aucun correctif concernant les déplacements du Spark. Il n’existe donc pas de touche officielle ni de procédure de reconnexion garantie à recommander. Une désynchronisation en multijoueur, un verrouillage des commandes, un problème de collision ou une autre cause restent envisageables, mais aucune ne doit être présentée comme confirmée sans cas reproductible.
+
+## Vérifications techniques à faible risque
+
+- Installez la dernière version disponible sur Steam.
+- Vérifiez les commandes de déplacement et le périphérique d’entrée actif.
+- Retirez les mods injectés, les outils de triche et les DLL personnalisées avant de tenter de reproduire le problème.
+- Si le groupe peut le faire sans compromettre la partie, revenez à une situation stable et essayez de reproduire le blocage une fois.
+- Signalez le résultat sur le Discord officiel ou par le canal d’assistance indiqué par l’équipe.
+
+Ne partez pas du principe qu’une reconnexion préservera la partie en cours et ne vous fiez pas aux prétendus « taux de réussite » publiés sans source par des sites de dépannage.
 
 ## Sources
 
-- [GRAIN ROT sur Steam](https://store.steampowered.com/app/4450620/GRAIN_ROT/)
-- [Discussion Steam après la sortie](https://steamcommunity.com/app/4450620/discussions/0/582805206889151919/)
-- [Historique officiel des mises à jour](https://store.steampowered.com/news/app/4450620)
+- [GRAIN ROT sur Steam](https://store.steampowered.com/app/4450620/GRAIN_ROT/) — description officielle du Spark et de la disparition progressive de sa lumière.
+- [Discussion Steam après la sortie](https://steamcommunity.com/app/4450620/discussions/0/582805206889151919/) — observations de la communauté sur le Glow et les déplacements.
+- [Historique officiel des mises à jour](https://store.steampowered.com/news/app/4450620) — aucun correctif explicite des déplacements du Spark jusqu’à la version 1.05.

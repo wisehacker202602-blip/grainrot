@@ -2,14 +2,14 @@
 slug: de-spark-cannot-move
 locale: de
 translationKey: spark-movement
-title: "GRAIN ROT: Spark Kann Sich Nicht Bewegen"
-description: "Wenn sich dein Spark in GRAIN ROT nicht bewegen kann, prüfe zuerst Glow, Licht und Teamnähe und unterscheide danach Mechanik von Eingabefehler."
+title: "GRAIN ROT: Spark kann sich nicht bewegen – Glow oder Bug?"
+description: "Kann sich dein Spark in GRAIN ROT nicht bewegen, prüfe zuerst seinen Glow sowie Lichtquellen und Teammitglieder in der Nähe. Erst danach solltest du von einem Eingabefehler ausgehen."
 category: Help
 intent: Spark kann sich nicht bewegen
-answer: "Prüfe zuerst den Glow des Sparks. Community-Beobachtungen zufolge kann abnehmender Glow Sprünge und Schweben einschränken. Suche Licht oder einen Mitspieler, solange Bewegung möglich ist. Bleibt Glow sichtbar und fällt jede Eingabe plötzlich aus, dokumentiere die Situation als möglichen Fehler."
+answer: "Prüfe zuerst den Glow deines Sparks. Community-Beobachtungen zufolge schränkt ein sinkender Glow das Springen und Schweben zunehmend ein. Bewege dich zu einer Lichtquelle oder in die Nähe eines Teammitglieds, solange das noch möglich ist. Bleibt der Glow sichtbar, obwohl sämtliche Bewegungsbefehle plötzlich ausfallen, dokumentiere die Spielsituation und melde einen möglichen Bug."
 evidence: Official + community
 updated: "2026-08-11"
-readingTime: "4 min"
+readingTime: "5 Minuten"
 image: /images/enemies.webp
 imageAlt: "Ein leuchtender Spark neben GRAIN ROT Vessels"
 related: [de-turn-off-flashlight]
@@ -17,23 +17,39 @@ related: [de-turn-off-flashlight]
 
 ## Zuerst den Glow prüfen
 
-Die offizielle Store-Beschreibung erklärt, dass ein Spark einen neuen Wirt finden muss, bevor sein Licht vollständig erlischt. Spieler berichten ergänzend, dass sinkender **Glow** die Fähigkeit zu springen oder zu schweben schrittweise begrenzen kann.
+Laut offizieller Steam-Beschreibung muss ein Spark einen neuen Wirtskörper finden, bevor sein Licht vollständig erlischt. Spielerberichten zufolge verliert er mit sinkendem **Glow** nach und nach die Fähigkeit zu springen oder zu schweben. Eine Lichtquelle oder die Nähe zu einem Teammitglied kann diesen Zustand wiederherstellen.
 
-Wurde die Bewegung zusammen mit dem Glow langsam schwächer, spricht das eher für den vorgesehenen Rettungsdruck als für eingefrorene Eingaben.
+Wenn die Bewegung parallel zum Glow allmählich nachlässt, deutet das eher auf den gewollten Zeitdruck der Rettungsmechanik als auf blockierte Eingaben hin.
 
 ## Schritte zur Erholung
 
-1. Beobachte den **Glow** und ob die Einschränkung plötzlich oder schrittweise begann.
-2. Bewege dich zu Licht oder einem Teammitglied, solange noch Eingaben möglich sind.
-3. Bitte die Crew zurückzukommen, statt tiefer weiterzugehen.
-4. Suche einen neuen Wirt für den Spark.
-5. Prüfe die aktuelle Tastenbelegung, falls Glow vorhanden ist, aber keine Eingabe reagiert.
+1. Achte auf den **Glow**. Wurde die Bewegung allmählich schwächer oder brach sie sofort ab?
+2. Bewege dich zu einer Lichtquelle oder einem Teammitglied, solange das noch möglich ist.
+3. Bitte deine Crew umzukehren, statt weiter in die Tiefe vorzudringen.
+4. Suche nach einem neuen Wirtskörper für den Spark.
+5. Ist der Glow noch sichtbar, aber keine Bewegungssteuerung reagiert, halte die genauen Bedingungen fest.
+
+<FieldNote type="info" title="Hilfreiche Angaben für einen Bugreport">
+
+Nenne Spielversion, Solo- oder Mehrspielermodus, Lobby-Host, Eingabegerät, aktuellen Glow, Raum beziehungsweise Ebene, die Ursache der Zerstörung des Vessels und ob ein erneutes Verbinden etwas verändert hat.
+
+</FieldNote>
 
 ## Wann es wie ein Fehler aussieht
 
-Ein möglicher technischer Fehler liegt näher, wenn die Bewegung bei sichtbarem Glow abrupt endet und gültige Steuerungseinstellungen sowie eine erreichbare Lichtquelle nichts ändern. Die offiziellen Patchnotes bis 1.05 nennen keine bestätigte allgemeine Lösung für Spark-Bewegung.
+Ein technischer Fehler ist wahrscheinlicher, wenn die Bewegung bei sichtbarem Glow abrupt endet, die Steuerung korrekt belegt ist und auch eine erreichbare Lichtquelle nichts verändert.
 
-Notiere Spielversion, Solo- oder Mehrspielermodus, Host, Eingabegerät, Glow-Zustand und den Moment des Ausfalls. Melde einen reproduzierbaren Fall über den offiziellen Discord.
+Die Patches 1.01 bis 1.05 dokumentieren keine allgemeine Lösung für Bewegungsprobleme des Sparks. Desynchronisation im Mehrspielermodus, eine blockierte Eingabe oder ein Kollisionsfehler sind denkbar, dürfen ohne reproduzierbaren Fall aber nicht als bestätigte Ursache dargestellt werden.
+
+## Technische Prüfungen mit geringem Risiko
+
+- Aktualisiere das Spiel auf die neueste Steam-Version.
+- Prüfe die aktuelle Bewegungsbelegung und das aktive Eingabegerät.
+- Entferne Mods, Trainer und benutzerdefinierte DLLs, bevor du den Fehler reproduzierst.
+- Kehre, sofern gefahrlos möglich, in einen stabilen Zustand zurück und versuche den Fehler einmal gezielt zu reproduzieren.
+- Melde das Ergebnis über den offiziellen Discord oder den offiziellen Supportweg.
+
+Verlass dich nicht darauf, dass du den aktuellen Run nach einem erneuten Verbindungsaufbau fortsetzen kannst. Übernimm außerdem keine unbelegten „Erfolgsquoten“ von Troubleshooting-Seiten.
 
 ## Quellen
 

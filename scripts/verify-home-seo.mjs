@@ -14,9 +14,9 @@ const pages = [
   {
     path: "de/index.html",
     lang: "de",
-    title: "GRAIN ROT Wiki: Spielguides, Koop, Gegner & Lösungen",
+    title: "GRAIN ROT Wiki: Guides, Koop, Gegner & Lösungen",
     description:
-      "Entdecke im GRAIN ROT Wiki Spielguides, Koop- und Spielerzahlen, Gegner, Einstellungen, Fortschritt, Steam, Preis, Plattformen und Lösungen für häufige Probleme.",
+      "Im GRAIN ROT Wiki findest du Guides und Informationen zu Koop und Spielerzahl, Gegnern, Einstellungen, Fortschritt, Steam, Preis und Plattformen sowie Lösungen für häufige Probleme.",
     heading: "GRAIN ROT Wiki",
   },
   {
@@ -24,55 +24,55 @@ const pages = [
     lang: "fr",
     title: "Wiki GRAIN ROT : guides, coop, ennemis et solutions",
     description:
-      "Explorez le wiki GRAIN ROT : guides de jeu, coop et nombre de joueurs, ennemis, réglages, progression, Steam, prix, plateformes et solutions courantes.",
+      "Consultez le wiki GRAIN ROT pour trouver des guides de jeu et des informations sur la coop, le nombre de joueurs, les ennemis, les réglages, la progression, Steam, le prix et les plateformes, ainsi que des solutions aux problèmes courants.",
     heading: "Wiki GRAIN ROT",
   },
   {
     path: "es/index.html",
     lang: "es",
-    title: "Wiki de GRAIN ROT: guías, cooperativo, enemigos y soluciones",
+    title: "Wiki de GRAIN ROT: guías, modo cooperativo, enemigos y soluciones",
     description:
-      "Explora la wiki de GRAIN ROT con guías, cooperativo y número de jugadores, enemigos, ajustes, progreso, Steam, precio, plataformas y soluciones frecuentes.",
+      "Encuentra en la wiki de GRAIN ROT guías de juego, información sobre el modo cooperativo y el número de jugadores, enemigos, configuración, progreso, Steam, precio, plataformas y soluciones a problemas comunes.",
     heading: "Wiki de GRAIN ROT",
   },
   {
     path: "pt-br/index.html",
     lang: "pt-BR",
-    title: "Wiki de GRAIN ROT: guias, co-op, inimigos e soluções",
+    title: "Wiki de GRAIN ROT: guias, coop, inimigos e soluções",
     description:
-      "Explore a wiki de GRAIN ROT com guias, co-op e número de jogadores, inimigos, configurações, progresso, Steam, preço, plataformas e soluções comuns.",
+      "Consulte a wiki de GRAIN ROT para encontrar guias de jogo e informações sobre modo cooperativo, número de jogadores, inimigos, configurações, progressão, Steam, preço e plataformas, além de soluções para problemas comuns.",
     heading: "Wiki de GRAIN ROT",
   },
   {
     path: "ru/index.html",
     lang: "ru",
-    title: "Вики GRAIN ROT: гайды, кооператив, враги и решения",
+    title: "Вики по GRAIN ROT: гайды, кооператив, враги и решение проблем",
     description:
-      "Изучайте вики GRAIN ROT: гайды, кооператив и число игроков, враги, настройки, прогресс, Steam, цены, платформы и решения частых проблем.",
-    heading: "Вики GRAIN ROT",
+      "Вики по GRAIN ROT с гайдами по игровым механикам, кооперативу, врагам, настройкам и прогрессу, а также сведениями о Steam, цене, платформах и решениях частых проблем.",
+    heading: "Вики по GRAIN ROT",
   },
   {
     path: "ja/index.html",
     lang: "ja",
-    title: "GRAIN ROT Wiki：攻略・協力プレイ・敵・不具合対処",
+    title: "GRAIN ROT 攻略Wiki：遊び方・協力プレイ・敵・不具合対処",
     description:
-      "GRAIN ROT Wikiで、遊び方、協力プレイと人数、敵、設定、進行、Steam、価格、対応機種、よくある不具合の対処法を確認できます。",
-    heading: "GRAIN ROT Wiki",
+      "GRAIN ROTの攻略Wiki。遊び方、協力プレイの人数、敵、設定、進行、Steam版の価格・対応プラットフォーム、よくある不具合の対処法を出典付きでまとめています。",
+    heading: "GRAIN ROT 攻略Wiki",
   },
   {
     path: "ko/index.html",
     lang: "ko",
     title: "GRAIN ROT 위키: 공략, 협동, 적, 문제 해결",
     description:
-      "GRAIN ROT 위키에서 플레이 공략, 협동과 인원수, 적, 설정, 진행, Steam, 가격, 플랫폼, 자주 발생하는 문제 해결법을 확인하세요.",
+      "GRAIN ROT 공략 위키에서 게임 공략, 협동 플레이와 플레이 인원, 적, 설정, 진행, Steam 가격, 지원 플랫폼, 자주 발생하는 문제의 해결 방법을 확인하세요.",
     heading: "GRAIN ROT 위키",
   },
   {
     path: "uk/index.html",
     lang: "uk",
-    title: "Вікі GRAIN ROT: гайди, кооператив, вороги та рішення",
+    title: "Вікі GRAIN ROT: гайди, кооператив, вороги та розв’язання проблем",
     description:
-      "Досліджуйте вікі GRAIN ROT: гайди, кооператив і кількість гравців, вороги, налаштування, прогрес, Steam, ціни, платформи та вирішення частих проблем.",
+      "У вікі GRAIN ROT зібрано гайди, відомості про кооператив і кількість гравців, ворогів, налаштування, прогрес, ціну в Steam, платформи та розв’язання поширених проблем.",
     heading: "Вікі GRAIN ROT",
   },
 ];

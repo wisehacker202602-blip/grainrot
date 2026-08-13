@@ -2,11 +2,11 @@
 slug: fr-turn-off-flashlight
 locale: fr
 translationKey: flashlight
-title: "Comment Éteindre la Lampe Torche dans GRAIN ROT"
-description: "Appuyez sur R pour éteindre la lampe torche dans GRAIN ROT ; si la touche ne répond pas, vérifiez l’action Flashlight dans les commandes."
+title: "Comment éteindre la lampe torche dans GRAIN ROT"
+description: "Appuyez sur R pour allumer ou éteindre la lampe torche dans GRAIN ROT ; si la touche ne répond pas, vérifiez la commande Flashlight dans les paramètres."
 category: Guides
 intent: Éteindre la lampe torche
-answer: "Appuyez sur R au clavier pour éteindre la lampe torche, puis de nouveau sur R pour la rallumer. Si rien ne se passe, ouvrez Options puis Controls / Key Bindings et vérifiez la touche attribuée à l’action Flashlight."
+answer: "Sur un clavier, appuyez sur R pour éteindre la lampe torche, puis de nouveau sur R pour la rallumer. Si cette touche ne produit aucun effet, ouvrez le menu Controls ou Key Bindings et vérifiez la touche actuellement attribuée à l’action Flashlight : elle a peut-être été modifiée."
 evidence: Official + community
 updated: "2026-08-11"
 readingTime: "3 min"
@@ -15,26 +15,40 @@ imageAlt: "Un couloir sombre de GRAIN ROT éclairé par l’équipement des joue
 related: [fr-spark-cannot-move]
 ---
 
-## Touche de la lampe torche
+## Commande de la lampe torche au clavier
 
-La touche par défaut observée dans les séquences de jeu est **R**. Une pression éteint la lampe et une seconde la rallume. Une courte vidéo officielle de GRAIN ROT mentionne également la touche R, ce qui confirme cette attribution.
+Dans les séquences de jeu examinées, la touche par défaut est **R**. Appuyez une fois pour éteindre la lampe torche, puis une seconde fois pour la rallumer.
+
+Le compte TikTok officiel de GRAIN ROT a également publié une vidéo intitulée « do NOT press r to turn on your flashlight », ce qui confirme que la touche R sert à allumer la lampe torche. Ce titre est une plaisanterie liée à la situation montrée dans la vidéo, et non une consigne permanente déconseillant d’allumer la lampe.
 
 ## Si la touche R ne fonctionne pas
 
 1. Ouvrez **Options**.
 2. Accédez à **Controls / Key Bindings**.
 3. Repérez l’action **Flashlight**.
-4. Vérifiez si elle a été réattribuée ou entre en conflit avec une autre action.
-5. Appliquez le réglage et testez-le après un redémarrage.
+4. Vérifiez si une autre touche lui a été attribuée ou si elle entre en conflit avec une autre commande.
+5. Appliquez le réglage, quittez le menu normalement, puis relancez le jeu pour vérifier que l’attribution a bien été enregistrée.
 
-Le patch 1.03 indique que la sauvegarde des touches personnalisées a été corrigée. Mettez le jeu à jour avant de modifier manuellement des fichiers de configuration.
+D’après les notes du patch 1.03, un problème empêchant l’enregistrement correct des touches personnalisées a été corrigé. Des joueurs ont toutefois encore signalé quelques réinitialisations isolées le jour de cette mise à jour. Installez donc la dernière version et refaites un essai avant de modifier manuellement les fichiers de configuration.
+
+<FieldNote type="warning" title="Ne vous fiez pas à la touche F sans la vérifier">
+
+Une page communautaire indique **F**, mais cette information contredit le titre de la vidéo officielle et plusieurs séquences de jeu. Si R et F ne donnent pas le même résultat sur votre installation, fiez-vous à l’attribution affichée dans le menu des commandes du jeu.
+
+</FieldNote>
 
 ## La lumière attire-t-elle les ennemis ?
 
-Les informations officielles précisent que les Corrupted réagissent au son, au mouvement et entre eux. Elles ne donnent pas de règle universelle selon laquelle tous les ennemis détectent toujours la lampe. Ne généralisez donc pas une réaction observée à tous les monstres.
+Les informations officielles indiquent que les **Corrupted** réagissent au son, aux mouvements et les uns aux autres. Elles ne définissent toutefois aucune règle générale selon laquelle tous les ennemis détecteraient systématiquement la lampe torche. N’en déduisez pas qu’éteindre la lumière fait immédiatement perdre votre trace, ni que tous les Corrupted réagissent à la lumière de la même manière.
+
+Utilisez la lampe en fonction de la visibilité et du comportement observé pendant la rencontre. Une stratégie contre un ennemi précis ne doit être présentée comme fiable qu’une fois la version concernée et les sources clairement établies.
+
+## Commande à la manette
+
+Steam indique que GRAIN ROT prend entièrement en charge les manettes, mais les sources publiques examinées ne permettent pas d’établir avec certitude la touche attribuée par défaut à la lampe torche. Consultez la configuration de la manette dans le menu **Controls** plutôt que de reprendre une touche générique indiquée sans source.
 
 ## Sources
 
-- [Vidéo TikTok officielle de GRAIN ROT](https://www.tiktok.com/@grainrotofficial/video/7656093412139044110)
-- [GRAIN ROT sur Steam](https://store.steampowered.com/app/4450620/GRAIN_ROT/)
-- [Patch 1.03](https://store.steampowered.com/news/app/4450620/view/703275952293020479)
+- [Vidéo TikTok officielle de GRAIN ROT sur la lampe torche](https://www.tiktok.com/@grainrotofficial/video/7656093412139044110)
+- [Page Steam de GRAIN ROT](https://store.steampowered.com/app/4450620/GRAIN_ROT/) — description officielle du comportement des Corrupted.
+- [Patch 1.03](https://store.steampowered.com/news/app/4450620/view/703275952293020479) — correction de l’enregistrement des touches personnalisées.
