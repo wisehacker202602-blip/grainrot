@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3, ExternalLink, List, RefreshCw } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -10,6 +9,7 @@ import type { Article } from "@/lib/content";
 import { getRelatedArticles } from "@/lib/content";
 import { categoryHrefs, getCategoryLabel, siteConfig } from "@/lib/site";
 import { localeConfig } from "@/lib/i18n";
+import { LocaleLink as Link } from "@/components/locale-context";
 
 export function ArticlePage({ article }: { article: Article }) {
   const related = getRelatedArticles(article);

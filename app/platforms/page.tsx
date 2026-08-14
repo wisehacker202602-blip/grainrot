@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Monitor, ShoppingCart } from "lucide-react";
 import { CategoryHub } from "@/components/category-hub";
+import { LocaleLink as Link } from "@/components/locale-context";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({

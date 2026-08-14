@@ -24,7 +24,7 @@ export type ArticleMeta = {
   image: string;
   imageAlt: string;
   locale: ArticleLocale;
-  translationKey?: "flashlight" | "spark-movement";
+  translationKey?: "flashlight" | "spark-movement" | "how-to-play" | "player-count" | "price";
   featured?: boolean;
   related?: string[];
 };
@@ -97,7 +97,7 @@ export function getEveryArticle(): Article[] {
 }
 
 export function getAllArticles(locale: ArticleLocale = "en"): Article[] {
-  const localizedOrder = ["flashlight", "spark-movement"];
+  const localizedOrder = ["how-to-play", "player-count", "price", "flashlight", "spark-movement"];
   return getEveryArticle()
     .filter((article) => article.locale === locale)
     .sort((a, b) => {

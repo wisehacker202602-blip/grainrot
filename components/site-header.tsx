@@ -1,17 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import { ChevronDown, ExternalLink, Globe2, Menu, Search, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { ArticleMeta } from "@/lib/content";
 import { primaryNavigation, siteConfig } from "@/lib/site";
-import { getLocaleFromPathname, localeCodes, localeConfig } from "@/lib/i18n";
+import { getLocaleFromPathname, localeCodes, localeConfig, withLocaleContext } from "@/lib/i18n";
 import { getChromeLabel } from "@/lib/chrome";
 import { SearchDialog } from "@/components/search-dialog";
+import { LocaleLink as Link, useCurrentLocale } from "@/components/locale-context";
 
 export function SiteHeader({ articles }: { articles: ArticleMeta[] }) {
   const pathname = usePathname();
+  const locale = useCurrentLocale();
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -49,23 +50,29 @@ export function SiteHeader({ articles }: { articles: ArticleMeta[] }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const locale = getLocaleFromPathname(pathname);
   const config = localeConfig[locale];
   const copy = config.ui;
   const chromeLabel = (label: string) => getChromeLabel(locale, label);
   const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
   const currentArticle = articles.find((article) => article.href === normalizedPath);
   const languageHref = (targetLocale: (typeof localeCodes)[number]) => {
-    if (!currentArticle?.translationKey) return localeConfig[targetLocale].href;
-    return articles.find((article) => article.locale === targetLocale && article.translationKey === currentArticle.translationKey)?.href
-      ?? localeConfig[targetLocale].href;
+    if (currentArticle?.translationKey) {
+      const translation = articles.find((article) => article.locale === targetLocale && article.translationKey === currentArticle.translationKey);
+      if (translation) return translation.href;
+      if (currentArticle.locale === "en") return withLocaleContext(currentArticle.href, targetLocale);
+      return localeConfig[targetLocale].href;
+    }
+    if (getLocaleFromPathname(pathname) !== "en" || normalizedPath === "/") return localeConfig[targetLocale].href;
+    return withLocaleContext(normalizedPath, targetLocale);
   };
   const localizedHref = (href: string) => {
-    if (locale === "en") return href;
-    if (href === "/" || href === "/guides/" || href === "/help/") return config.href;
+    if (href === "/") return config.href;
     const sourceArticle = articles.find((article) => article.locale === "en" && article.href === href);
-    if (!sourceArticle?.translationKey) return href;
-    return articles.find((article) => article.locale === locale && article.translationKey === sourceArticle.translationKey)?.href ?? href;
+    if (sourceArticle?.translationKey) {
+      const translation = articles.find((article) => article.locale === locale && article.translationKey === sourceArticle.translationKey);
+      if (translation) return translation.href;
+    }
+    return withLocaleContext(href, locale);
   };
   const isActive = (href: string) => {
     if (locale !== "en") {
@@ -74,7 +81,8 @@ export function SiteHeader({ articles }: { articles: ArticleMeta[] }) {
       if (href === "/help/") return currentArticle?.category === "Help";
     }
     const target = localizedHref(href);
-    return target === "/" ? pathname === "/" : pathname.startsWith(target);
+    const targetPathname = new URL(target, "https://navigation.invalid").pathname;
+    return targetPathname === "/" ? pathname === "/" : pathname.startsWith(targetPathname);
   };
 
   return (
@@ -125,7 +133,7 @@ export function SiteHeader({ articles }: { articles: ArticleMeta[] }) {
               </button>
               <div className="language-menu" aria-label={copy.languages}>
                 {localeCodes.map((targetLocale) => (
-                  <Link href={languageHref(targetLocale)} lang={localeConfig[targetLocale].htmlLang} aria-current={targetLocale === locale ? "page" : undefined} onClick={closeNavigation} key={targetLocale}>
+                  <Link href={languageHref(targetLocale)} localeOverride={targetLocale} lang={localeConfig[targetLocale].htmlLang} aria-current={targetLocale === locale ? "page" : undefined} onClick={closeNavigation} key={targetLocale}>
                     <span>{localeConfig[targetLocale].nativeName}</span><small>{localeConfig[targetLocale].shortLabel}</small>
                   </Link>
                 ))}

@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ArrowRight, BookOpen, Search } from "lucide-react";
 import { getArticlesByCategory } from "@/lib/content";
 import { categoryDescriptions, type Category } from "@/lib/site";
+import { LocaleLink as Link } from "@/components/locale-context";
 
 export function CategoryHub({
   category,
@@ -23,7 +23,7 @@ export function CategoryHub({
       <header className="page-hero page-hero--hub">
         <div className="shell">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link><span>/</span><span>{category}</span>
+            <Link href="/">GRAIN ROT Wiki</Link><span>/</span><span>{category}</span>
           </nav>
           <span className="kicker"><span />{eyebrow}</span>
           <h1>{title}</h1>
@@ -42,7 +42,7 @@ export function CategoryHub({
           <div className="section-heading">
             <span className="section-index">BROWSE {category.toUpperCase()}</span>
             <div><h2>Find the direct answer</h2><p>Pages are ordered by measured search demand, then by the next decision a player needs to make.</p></div>
-            <Link className="text-link" href="/wiki/">Full wiki index <ArrowRight size={16} /></Link>
+            <Link className="text-link" href="/wiki/">Full guide directory <ArrowRight size={16} /></Link>
           </div>
           <div className="category-directory__list">
             {articles.map((article, index) => (

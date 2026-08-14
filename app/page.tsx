@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, BadgeCheck, BookOpen, Bug, ExternalLink, Gamepad2, Layers3, Search, Settings2, ShieldAlert, Users } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { EvidenceBadge } from "@/components/evidence-badge";
+import { LocaleLink as Link } from "@/components/locale-context";
 import { getAllArticles } from "@/lib/content";
 import { categories, categoryDescriptions, siteConfig } from "@/lib/site";
 import { createPageMetadata } from "@/lib/metadata";
@@ -59,10 +59,10 @@ export default function HomePage() {
           <div className="home-hero__copy">
             <span className="kicker"><span />Independent, evidence-led player reference</span>
             <h1>GRAIN ROT<br /><em>Wiki</em></h1>
-            <p>A complete player guide to the core loop, co-op, progression, enemies, settings, platforms, and common problems, with every answer clearly sourced.</p>
+            <p>The GRAIN ROT Wiki provides verified guides for the core loop, co-op player limits, progression, enemies, settings, Steam, price, platforms, and common fixes.</p>
             <div className="home-hero__actions">
               <Link className="button button--primary" href="/guides/how-to-play/"><BookOpen size={18} />Learn how to play</Link>
-              <Link className="button button--ghost" href="/wiki/"><Search size={18} />Browse the wiki</Link>
+              <Link className="button button--ghost" href="/wiki/"><Search size={18} />Browse all guides</Link>
             </div>
             <div className="home-hero__trust">
               <span><BadgeCheck size={16} />{articles.length} English wiki pages</span>
@@ -96,7 +96,7 @@ export default function HomePage() {
           </div>
           <div className="route-grid">
             <Link href="/guides/how-to-play/"><Gamepad2 /><span><strong>I just installed</strong><small>Core loop and first run</small></span><ArrowRight /></Link>
-            <Link href="/game-info/how-many-players/"><Users /><span><strong>I am forming a crew</strong><small>Co-op and lobby limits</small></span><ArrowRight /></Link>
+            <Link href="/game-info/how-many-players/"><Users /><span><strong>I am forming a crew</strong><small>Player limit and lobby size</small></span><ArrowRight /></Link>
             <Link href="/help/spark-cannot-move/"><Bug /><span><strong>Something is broken</strong><small>Version-aware troubleshooting</small></span><ArrowRight /></Link>
             <Link href="/help/options/"><Settings2 /><span><strong>I need better settings</strong><small>Controls, comfort, and performance</small></span><ArrowRight /></Link>
           </div>
@@ -107,8 +107,8 @@ export default function HomePage() {
         <div className="shell home-directory">
           <div className="section-heading">
             <span className="section-index">02 / COMPLETE INDEX</span>
-            <div><h2>All {articles.length} English pages, organized</h2><p>The complete keyword map is grouped into six player-facing Wiki sections, ordered by measured search demand.</p></div>
-            <Link className="text-link" href="/wiki/">Open scan view <ArrowRight size={16} /></Link>
+            <div><h2>All {articles.length} English guides, organized</h2><p>The complete keyword map is grouped into six player-facing sections, ordered by measured search demand.</p></div>
+            <Link className="text-link" href="/wiki/">Open guide directory <ArrowRight size={16} /></Link>
           </div>
           <div className="home-directory__summary" aria-label="Wiki coverage">
             <span><strong>{categories.length}</strong> topic groups</span>
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div className="section-heading">
             <span className="section-index">03 / START HERE</span>
             <div><h2>Guides for your first hour</h2><p>Three pages that answer the biggest early-game decisions without inventing mechanics.</p></div>
-            <Link className="text-link" href="/wiki/">All {articles.length} topics <ArrowRight size={16} /></Link>
+            <Link className="text-link" href="/wiki/">All {articles.length} guides <ArrowRight size={16} /></Link>
           </div>
           <div className="article-grid">
             {featured.map((article) => <ArticleCard article={article} key={article.slug} />)}
@@ -191,7 +191,7 @@ export default function HomePage() {
       <section className="section-band final-cta">
         <div className="shell final-cta__inner">
           <div><span className="kicker"><span />Source-led by design</span><h2>Search the wiki.<br />Check the evidence.<br />Keep the run moving.</h2></div>
-          <div className="final-cta__actions"><Link className="button button--primary" href="/wiki/"><BookOpen size={18} />Open the wiki index</Link><a className="button button--ghost" href={siteConfig.steamUrl} target="_blank" rel="noreferrer">View on Steam <ExternalLink size={17} /></a></div>
+          <div className="final-cta__actions"><Link className="button button--primary" href="/wiki/"><BookOpen size={18} />Open the guide directory</Link><a className="button button--ghost" href={siteConfig.steamUrl} target="_blank" rel="noreferrer">View on Steam <ExternalLink size={17} /></a></div>
         </div>
       </section>
     </>

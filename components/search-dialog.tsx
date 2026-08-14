@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ArticleLocale, ArticleMeta } from "@/lib/content";
 import { getCategoryLabel } from "@/lib/site";
 import { formatSearchCount, localeConfig } from "@/lib/i18n";
+import { LocaleLink as Link } from "@/components/locale-context";
 
 export function SearchDialog({ articles, locale, open, onClose }: { articles: ArticleMeta[]; locale: ArticleLocale; open: boolean; onClose: () => void }) {
   const [query, setQuery] = useState("");

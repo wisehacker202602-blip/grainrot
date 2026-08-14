@@ -1,10 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useCurrentLocale } from "@/components/locale-context";
 import { getChromeLabel } from "@/lib/chrome";
-import { getLocaleFromPathname } from "@/lib/i18n";
 
 export function LocalizedSkipLink() {
-  const locale = getLocaleFromPathname(usePathname());
+  const locale = useCurrentLocale();
   return <a className="skip-link" href="#main-content">{getChromeLabel(locale, "Skip to content")}</a>;
 }

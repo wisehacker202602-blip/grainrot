@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight, Clock3 } from "lucide-react";
 import type { ArticleMeta } from "@/lib/content";
 import { EvidenceBadge } from "@/components/evidence-badge";
 import { getCategoryLabel } from "@/lib/site";
+import { LocaleLink as Link } from "@/components/locale-context";
 
 export function ArticleCard({ article, compact = false }: { article: ArticleMeta; compact?: boolean }) {
   return (

@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, BadgeCheck, Eye, ShieldCheck } from "lucide-react";
+import { LocaleLink as Link } from "@/components/locale-context";
 import { getAllArticles } from "@/lib/content";
 import { createPageMetadata } from "@/lib/metadata";
 import { categories, categoryDescriptions } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "GRAIN ROT Wiki Index",
-  description: "Browse every GRAIN ROT wiki page by platform, game information, guide, fix, enemy, and community category.",
+  title: "All GRAIN ROT Guides: Complete Topic Directory",
+  description: "Browse every GRAIN ROT guide by platform, game information, walkthrough, fix, enemy, and community topic.",
   path: "/wiki/",
+  absoluteTitle: true,
 });
 
 export default function WikiPage() {
   const articles = getAllArticles();
   return (
     <>
-      <header className="page-hero page-hero--wiki"><div className="shell"><span className="kicker"><span />Complete directory</span><h1>GRAIN ROT Wiki Index</h1><p>Every English guide in one scan-first directory, ordered by measured search demand.</p></div></header>
+      <header className="page-hero page-hero--wiki"><div className="shell"><span className="kicker"><span />Complete topic directory</span><h1>All GRAIN ROT Guides</h1><p>Every English guide in one scan-first directory, ordered by measured search demand.</p></div></header>
       <section className="section-band section-band--paper evidence-guide"><div className="shell"><div><span className="section-index">READING THE WIKI</span><h2>Evidence before certainty</h2></div><div className="evidence-guide__items"><span><ShieldCheck />Official<strong>Steam, developer, or publisher</strong></span><span><BadgeCheck />Official + community<strong>Confirmed core with observed steps</strong></span><span><Eye />Community observed<strong>Useful, version-sensitive reports</strong></span></div></div></section>
       <section className="section-band"><div className="shell wiki-groups">
         {categories.map((category, index) => {

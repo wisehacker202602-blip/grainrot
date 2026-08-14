@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, BadgeCheck, BookOpen, ExternalLink } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { EvidenceBadge } from "@/components/evidence-badge";
@@ -8,6 +7,7 @@ import { getAllArticles } from "@/lib/content";
 import { localeConfig, getLocaleIndexAlternates, type ArticleLocale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
+import { LocaleLink as Link } from "@/components/locale-context";
 
 type LocalizedLocale = Exclude<ArticleLocale, "en">;
 

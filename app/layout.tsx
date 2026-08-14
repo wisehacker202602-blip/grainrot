@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { DocumentLanguage } from "@/components/document-language";
 import { LocalizedSkipLink } from "@/components/localized-skip-link";
+import { LocaleContextProvider } from "@/components/locale-context";
 import { getEveryArticle } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
@@ -43,15 +44,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const articles = getEveryArticle().map(({ content, toc, ...meta }) => meta);
+  const translations = articles
+    .filter((article) => article.translationKey)
+    .map(({ href, locale, translationKey }) => ({ href, locale, translationKey }));
 
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
-        <DocumentLanguage />
-        <LocalizedSkipLink />
-        <SiteHeader articles={articles} />
-        <main id="main-content">{children}</main>
-        <SiteFooter />
+        <LocaleContextProvider translations={translations}>
+          <DocumentLanguage />
+          <LocalizedSkipLink />
+          <SiteHeader articles={articles} />
+          <main id="main-content">{children}</main>
+          <SiteFooter />
+        </LocaleContextProvider>
       </body>
       {process.env.NODE_ENV === "production" && (
         <>

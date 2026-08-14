@@ -59,7 +59,7 @@ export const localeConfig: Record<ArticleLocale, LocaleConfig> = {
   en: {
     href: "/", hreflang: "en", htmlLang: "en", ogLocale: "en_US", dateLocale: "en-US", shortLabel: "EN", nativeName: "English",
     hubTitle: "GRAIN ROT Wiki: Game Guides, Co-op, Enemies & Fixes", hubDescription: "Explore the GRAIN ROT Wiki for how-to-play guides, co-op and player-count details, enemies, settings, progression, Steam, price, platforms, and common fixes.", hubHeading: "GRAIN ROT Wiki", hubKicker: "Independent, evidence-led player reference", hubIntro: "A complete player guide to the core loop, co-op, progression, enemies, settings, platforms, and common problems, with every answer clearly sourced.",
-    ui: { home: "Home", allGuides: "All guides", updated: "Updated", readingSuffix: "read", directAnswer: "DIRECT ANSWER", versionCheck: "Version check", versionNote: "This page was reviewed on {date}. Patch details and live storefront values can change; the linked official sources take priority.", onThisPage: "On this page", sourcePolicy: "Source policy", sourceCopy: "We separate official facts, community observations, and unknown details.", howWeVerify: "How we verify", keepReading: "KEEP READING", relatedGuides: "Related guides", relatedCopy: "Next answers from the same part of the game.", searchWiki: "Search wiki", searchPlaceholder: "Search platforms, fixes, enemies...", searchArticles: "Search articles", closeSearch: "Close search", suggested: "Suggested wiki pages", indexedTopics: "indexed topics", matches: "matches", noMatches: "No wiki page matches that search yet.", languages: "Languages", breadcrumb: "Breadcrumb" },
+    ui: { home: "GRAIN ROT Wiki", allGuides: "All guides", updated: "Updated", readingSuffix: "read", directAnswer: "DIRECT ANSWER", versionCheck: "Version check", versionNote: "This page was reviewed on {date}. Patch details and live storefront values can change; the linked official sources take priority.", onThisPage: "On this page", sourcePolicy: "Source policy", sourceCopy: "We separate official facts, community observations, and unknown details.", howWeVerify: "How we verify", keepReading: "KEEP READING", relatedGuides: "Related guides", relatedCopy: "Next answers from the same part of the game.", searchWiki: "Search wiki", searchPlaceholder: "Search platforms, fixes, enemies...", searchArticles: "Search articles", closeSearch: "Close search", suggested: "Suggested wiki pages", indexedTopics: "indexed topics", matches: "matches", noMatches: "No wiki page matches that search yet.", languages: "Languages", breadcrumb: "Breadcrumb" },
   },
   de: {
     href: "/de/", hreflang: "de", htmlLang: "de", ogLocale: "de_DE", dateLocale: "de-DE", shortLabel: "DE", nativeName: "Deutsch",
@@ -104,6 +104,7 @@ export const localeConfig: Record<ArticleLocale, LocaleConfig> = {
 };
 
 export const localizedLocales = localeCodes.filter((locale) => locale !== "en");
+export const localeQueryKey = "locale";
 
 export function isArticleLocale(value: string): value is ArticleLocale {
   return localeCodes.includes(value as ArticleLocale);
@@ -112,6 +113,41 @@ export function isArticleLocale(value: string): value is ArticleLocale {
 export function getLocaleFromPathname(pathname: string): ArticleLocale {
   const firstSegment = pathname.split("/").filter(Boolean)[0];
   return firstSegment && isArticleLocale(firstSegment) ? firstSegment : "en";
+}
+
+export function getLocaleFromContext(
+  pathname: string,
+  searchParams?: Pick<URLSearchParams, "get">,
+): ArticleLocale {
+  const pathnameLocale = getLocaleFromPathname(pathname);
+  if (pathnameLocale !== "en") return pathnameLocale;
+
+  const queryLocale = searchParams?.get(localeQueryKey);
+  return queryLocale && isArticleLocale(queryLocale) ? queryLocale : "en";
+}
+
+export function withLocaleContext(href: string, locale: ArticleLocale): string {
+  if (href.startsWith("#") || href.startsWith("//")) return href;
+
+  const baseUrl = "https://locale-context.invalid";
+  let url: URL;
+  try {
+    url = new URL(href, baseUrl);
+  } catch {
+    return href;
+  }
+  if (url.origin !== baseUrl) return href;
+
+  if (locale === "en") {
+    url.searchParams.delete(localeQueryKey);
+  } else if (url.pathname === "/") {
+    url.pathname = localeConfig[locale].href;
+    url.searchParams.delete(localeQueryKey);
+  } else if (getLocaleFromPathname(url.pathname) === "en") {
+    url.searchParams.set(localeQueryKey, locale);
+  }
+
+  return `${url.pathname}${url.search}${url.hash}`;
 }
 
 export function getLocaleIndexAlternates(): Record<string, string> {

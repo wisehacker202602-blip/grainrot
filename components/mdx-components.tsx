@@ -1,6 +1,7 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { AlertTriangle, BadgeCheck, Info } from "lucide-react";
 import { slugifyHeading } from "@/lib/content";
+import { LocaleLink } from "@/components/locale-context";
 
 function H2({ children, ...props }: ComponentPropsWithoutRef<"h2">) {
   return <h2 id={slugifyHeading(String(children))} {...props}>{children}</h2>;
@@ -12,7 +13,8 @@ function H3({ children, ...props }: ComponentPropsWithoutRef<"h3">) {
 
 function A({ href = "", children, ...props }: ComponentPropsWithoutRef<"a">) {
   const external = href.startsWith("http");
-  return <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} {...props}>{children}</a>;
+  if (!external) return <LocaleLink href={href} {...props}>{children}</LocaleLink>;
+  return <a href={href} target="_blank" rel="noreferrer" {...props}>{children}</a>;
 }
 
 export function FieldNote({ children, type = "info", title }: { children: ReactNode; type?: "info" | "warning" | "verified"; title?: string }) {
